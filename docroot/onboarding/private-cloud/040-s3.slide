@@ -1,0 +1,10 @@
+## S3
+
+- BZA tests rely on S3-storage for test assets, reports
+- Customer-provided S3-compatible storage: S3, Minio, Hitachi, Ceph, etc
+- [Taurus cloud](https://github.com/Blazemeter/taurus-cloud) executions get their config via API calls to [custom-config](https://bza-29-danielb-gcp.blazemeter.net/api/v4/taurus/r-v4-5e64c4543d952/custom-config)
+  - YAML tag **[bzm_aws_s3](https://github.com/Blazemeter/private-cloud/blob/e6dbf0c20e810f8fe5774723d5f08ac1bbfcf464/app/bzm_gateway_interceptor/hooks/v4/config.py#L13)**
+  - Ignored by non Private Cloud
+  - Private Cloud's `bzm-app` replaces S3 config by his own S3-compatible [config](https://github.com/Blazemeter/private-cloud/blob/e6dbf0c20e810f8fe5774723d5f08ac1bbfcf464/app/bzm_gateway_interceptor/hooks/v4/config.py#L20)
+
+: taurus-cloud vs taurus bzt

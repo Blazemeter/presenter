@@ -1,0 +1,12 @@
+## Overview
+
+- Gateway between BZA and users
+- [Flask](https://flask.palletsprojects.com/) application (Python 3-only, 3.7, originally Python 2-only)
+- Replace [https://a.blazemeter.com](https://a.blazemeter.com) with [https://internal.customer.com](https://internal.customer.com)
+- BZA's **account** entity [/api/v4/accounts/NNNNN](https://a.blazemeter.com/api/v4/accounts/NNNNN)
+- **appUrl** field managed from [account environment settings](https://new-pc.blazemeter.com/app/#/settings/accounts/318192/environment) (ie. [https://internal.customer.com](https://internal.customer.com))
+- Use [blueprints](https://github.com/Blazemeter/private-cloud/tree/master/app/bzm_gateway_interceptor/blueprint) or [handlers](https://github.com/Blazemeter/private-cloud/tree/master/private_cloud/handler) to proxy upstream
+- [Scheduler](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py#L26) is cooperative between BZA's scheduler and `bzm-app`'s own: ignore if payload differs from local copy
+- Not necesarilly a 1:1 request/resonse
+
+: scheduler workflow

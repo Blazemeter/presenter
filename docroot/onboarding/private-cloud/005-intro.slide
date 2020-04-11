@@ -1,0 +1,9 @@
+## Intro
+
+[Private Cloud](https://github.com/Blazemeter/private-cloud)
+
+- What does BlazeMeter?
+- What is OPL?
+    - Cloud access to files, names, values
+- Secrets handling
+    - Only needed textual data reaches the cloud

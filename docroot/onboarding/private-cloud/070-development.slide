@@ -1,0 +1,11 @@
+## Development and testing
+
+[Repository](https://github.com/Blazemeter/private-cloud)
+
+- Open pull request, commits with **Jira** tickets (git [commit-msg](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/tools/hooks/commit-msg) hook)
+- [Blueprints](https://github.com/Blazemeter/private-cloud/tree/master/app/bzm_gateway_interceptor/blueprint) vs [Handlers](https://github.com/Blazemeter/private-cloud/tree/master/private_cloud/handler)
+- Handlers also load blueprints, not reciprocal
+- Create and commit relevant [captures](https://github.com/Blazemeter/private-cloud#capture-traffic-fixtures-development)
+- Non capture [unit tests](https://github.com/Blazemeter/private-cloud/tree/master/tests) use [pytest](https://pypi.org/project/pytest)
+- `make lint`, `make test`, `make lest`
+- [Travis](https://travis-ci.org/)

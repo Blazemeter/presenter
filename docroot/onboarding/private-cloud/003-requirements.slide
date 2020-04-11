@@ -1,0 +1,6 @@
+## Requirements
+
+- [Homebrew](https://brew.sh)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea)
+- [bzdev](https://github.com/Blazemeter/bzdev#install)
+- (bza dev requires [php7+mongo3.6](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/mac_install_php7.bash))

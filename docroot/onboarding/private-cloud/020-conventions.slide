@@ -1,0 +1,13 @@
+## Conventions
+
+- Master branch `master`
+- Work based on [Jira](https://blazemeter.atlassian.net) tickets
+- Feature branch name [should](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/tools/hooks/commit-msg) reference one or more tickets
+- [Wiki](https://blazemeter.atlassian.net/wiki)
+- **production** [a](https://a.blazemeter.com) | [auth](https://auth.blazemeter.com) | [mock](https://mock.blazemeter.com)
+- **staging** [new](https://new.blazemeter.com) | [new-pc](https://new-pc.blazemeter.com)
+- **experimental** [new2](https://new2.blazemeter.com)
+- bzdev [bza](https://bza-29-danielb-gcp.blazemeter.net) vs [billing](https://billing-29-danielb-gcp.blazemeter.net)
+
+: billing new-billing bzdev
+: how to aceess bzdev mongo

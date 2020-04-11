@@ -1,0 +1,12 @@
+## Captures
+
+[Captures](https://github.com/Blazemeter/private-cloud#capture-traffic-fixtures-development)
+
+- Allows to record actions and if behavior acceptable, record interaction as UT for regression-avoiding UT: given same input expect same output.
+- Not perfect, cannot predict changes in backend
+- Commit only relevant captures: `REQUEST_DUMP_CAPTURE_DIR=/tmp; kubectl cp ns-xxxxx/dpl-generic-private-cloud-xx-xxxxx-gcp-xxxxxx:$REQUEST_DUMP_CAPTURE_DIR/ ./tests/fixtures/captured/`
+- `git add ./tests/fixtures/captured/<METHOD>/<PATH>/*.json`
+
+: new-pc
+: api testing
+: scheduler

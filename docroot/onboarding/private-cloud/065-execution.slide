@@ -1,0 +1,7 @@
+## Excution
+
+Execution:
+
+```
+docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+```
