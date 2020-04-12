@@ -1,6 +1,7 @@
 ## Native
 
 - Why, How? [PyInstaller](https://www.pyinstaller.org)
+- [pyinstaller-alpine](https://github.com/Blazemeter/pyinstaller-alpine)
 - [Taurus Cloud](https://github.com/Blazemeter/taurus-cloud)
     - entry point
 
