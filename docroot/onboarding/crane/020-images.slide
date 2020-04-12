@@ -3,8 +3,9 @@
 [Crane components](https://a.blazemeter.com/api/v4/admin/phpinfo#cranecomponents_settings)
 
 - Crane
+- [Crane components](https://github.com/Blazemeter/a.blazemeter.com/tree/develop/src/blazemeter/Controller/CraneComponents)
 - V3 vs V4/taurus
-- Torero
+- Torero ([PC](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Controller/CraneComponents/ToreroComponent.php#L136))
 - Proxy recorder
 - SV*
 

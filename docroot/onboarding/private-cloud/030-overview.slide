@@ -8,5 +8,6 @@
 - Use [blueprints](https://github.com/Blazemeter/private-cloud/tree/master/app/bzm_gateway_interceptor/blueprint) or [handlers](https://github.com/Blazemeter/private-cloud/tree/master/private_cloud/handler) to proxy upstream
 - [Scheduler](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py#L26) is cooperative between BZA's scheduler and `bzm-app`'s own: ignore if payload differs from local copy
 - Not necesarilly a 1:1 request/resonse
+- Torero ([PC](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Controller/CraneComponents/ToreroComponent.php#L136))
 
 : scheduler workflow
