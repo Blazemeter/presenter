@@ -3,6 +3,8 @@
 - Why, How? [PyInstaller](https://www.pyinstaller.org)
 - [pyinstaller-alpine](https://github.com/Blazemeter/pyinstaller-alpine)
 - [Taurus Cloud](https://github.com/Blazemeter/taurus-cloud)
-    - entry point
+    - Trim `/`, replace `/` for `-`
+        - [/usr/local/bztcloud/cloud-launcher.sh](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Helpers/TaurusExecutor/TaurusExecutor.php#L16)
+        - [usr-local-bztcloud-cloud-launcher](https://github.com/Blazemeter/bzm-crane/blob/master/agent/native/executor.py#L64)
 
 : citrix
