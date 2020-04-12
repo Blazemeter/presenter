@@ -1,0 +1,9 @@
+## Why?
+
+When [SUT](https://en.wikipedia.org/wiki/System_under_test) is behind a firewall, load engines runniong in cloud locations are unable to reach it.
+
+Crane is a solution to this problem:
+
+- Installed *behind* firewall
+- Receives instructions from BZA by **polling**
+- No inbound traffic
