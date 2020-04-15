@@ -2,11 +2,12 @@
 
 [Crane components](https://a.blazemeter.com/api/v4/admin/phpinfo#cranecomponents_settings)
 
-- Crane
+- [Crane](https://github.com/Blazemeter/bzm-crane)
 - [Crane components](https://github.com/Blazemeter/a.blazemeter.com/tree/develop/src/blazemeter/Controller/CraneComponents)
-- V3 vs V4/taurus
-- Torero ([PC](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Controller/CraneComponents/ToreroComponent.php#L136))
-- Proxy recorder
+- v3 _vs_ v4: [taurus](https://github.com/Blazemeter/taurus) ([taurusa-cloud](https://github.com/Blazemeter/taurus-cloud))
+- [Torero](https://github.com/Blazemeter/torero) ([PC](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Controller/CraneComponents/ToreroComponent.php#L136))
+- [Proxy recorder](https://github.com/Blazemeter/proxy-recorder)
 - SV*
 
 : taurus vs taurus-cloud
+: torero, to tame taurus
