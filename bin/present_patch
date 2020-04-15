@@ -14,3 +14,48 @@ echo "Patching [$ROOT] ..." >&2 \
 && echo remove footer >&2 \
 && sed -i'' '/<div id="footer">/,/<\/div>/d' $ROOT/templates/dir.tmpl \
 && echo "... patching done [$ROOT]" >&2
+
+# logo ...
+URL=https://static.broadcom.com/static/img/broadcom-logo.png
+LOGO_FILENAME=$(basename $URL | egrep -o '^([A-Za-z0-9\.-]*)')
+LOGO_URL=/static/$LOGO_FILENAME
+LOGO=$ROOT/static/$LOGO_FILENAME
+[ ! -f $LOGO ] && wget  -O $LOGO $URL
+
+# css files ...
+for CSS in $(find $ROOT/static -name '*.css'); do
+    cat <<EOS >> $CSS
+
+html, body {
+    background-color: #eeeeee;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div#page, section.slides {
+    background: url("$LOGO_URL");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+}
+
+h1, h2, h3, h4, .rootHeading, #heading {
+    color: #dc3545 !important;
+    background: #dddddd;
+}
+
+a, .exampleHeading .text {
+    color: #dc3545c2;
+}
+
+a.navup {
+    text-decoration: underline;
+}
+
+#toc {
+    background-color: #888888;
+}
+EOS
+done
