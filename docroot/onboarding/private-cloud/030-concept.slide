@@ -34,4 +34,6 @@
     - `X-Downstream-Prefix`
     - `X-Original-Location` (redirects)
 
+- Simplest [handler](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/static.py#L24)
+
 : Keycloak SSO issue
