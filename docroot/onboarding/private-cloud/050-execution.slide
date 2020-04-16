@@ -1,25 +1,53 @@
 ## Quick install & execution
 
-- Quick install
+- Briefly
 
 ```
-sh <(curl -s https://s3.amazonaws.com/blazemeter-images/bzm-app/install/docker/install.run) \
-&& docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+$ wget https://s3.amazonaws.com/blazemeter-images/bzm-app/install/docker/install.run \
+&& chmod +x install.run \
+&& ./install.run
+ ...
+$ docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
 ```
 
-- Installation ([installer](https://github.com/Blazemeter/private-cloud/blob/master/install/docker/install.sh), [wiki](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/736919787/Private+Cloud+Docker+installer+WAP-14064))
-    - Starter `/usr/local/blazemeter/PrivateCloud/bzm-data-router`
-    - SSL certs `/etc/blazemeter/PrivateCloud/certs/*`
-    - Config `/etc/blazemeter/PrivateCloud/.env`
+## Installation
 
-- Configuration
+- Launcher
 ```
-vim /etc/blazemeter/PrivateCloud/.env
-docker rm -f bzm-data-router \
-&& docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+/usr/local/blazemeter/PrivateCloud/bzm-data-router
+```
+- SSL certs
+```
+/etc/blazemeter/PrivateCloud/certs/*
+```
+- Config
+```
+/etc/blazemeter/PrivateCloud/.env
 ```
 
-- Execution
-```
-docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
-```
+- Installer [source](https://github.com/Blazemeter/private-cloud/blob/master/install/docker/install.sh) + [makeself](https://makeself.io) = [install.run](https://s3.amazonaws.com/blazemeter-images/bzm-app/install/docker/install.run)
+- More in [wiki](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/736919787/Private+Cloud+Docker+installer+WAP-14064)
+
+
+## Configuration & execution
+
+
+- Environment variables exposed to Docker
+    ```
+    # reconfigure
+    vim /etc/blazemeter/PrivateCloud/.env
+    docker rm -f bzm-data-router \
+    && docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+    ```
+
+    - How it uses `/etc/blazemeter/PrivateCloud/.env`?
+    ```
+    # how config is used
+    docker run ... --env-file "/etc/blazemeter/PrivateCloud/.env" ...
+    ```
+
+    - Restart
+    ```
+    # restart
+    $ docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+    ```
