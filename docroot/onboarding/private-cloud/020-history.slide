@@ -13,13 +13,3 @@
 : bza /prepare
 : scheduler
 
-## Default handlers
-
-- Catch all handlers
-    - [bzm](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/catch_all.py)
-    - [mock](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/mock/catch_all.py)
-
-- Debugging headers injected by handlers
-    - `X-Upstream-Url`
-    - `X-Downstream-Prefix`
-    - `X-Original-Location` (redirects)

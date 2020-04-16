@@ -6,13 +6,32 @@
     - Load engines **require** S3-like storage
 - An on-premise [Flask](https://flask.palletsprojects.com/) "reverse proxy" to extract/inject from REST API request/responses sensitive information
 - BZA uses S3 for storage, Private Cloud can use S3-compatible
-- Secrets
-    - Hash table: keys hash, values cleartext
-    - Salted
-    - Permanent storage in **keys** files at S3-like storage
-        - Need context
-    - Logic
-        - Blueprints
-        - Handlers
-   
- 
+
+
+## Secrets
+
+- Hash table ([salted](https://github.com/Blazemeter/private-cloud/blob/master/bzm_app/codec/__init__.py#L134))
+    - Key = hash(cleartext)
+    - Value = cleartext
+- Storage in files **keys** at S3-like storage
+    - Need context
+    - [**Mappings**](https://github.com/Blazemeter/private-cloud/blob/master/bzm_app/mapping.py#L259)
+- Logic
+    - Blueprints
+    - Handlers
+
+: [err.]keys[.apm*]
+
+
+## Default handlers
+
+- Catch all handlers
+    - [bzm](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/catch_all.py)
+    - [mock](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/mock/catch_all.py)
+
+- Debugging headers injected by handlers
+    - `X-Upstream-Url`
+    - `X-Downstream-Prefix`
+    - `X-Original-Location` (redirects)
+
+: Keycloak SSO issue
