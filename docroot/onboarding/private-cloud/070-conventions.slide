@@ -16,5 +16,24 @@
 - bzdev
     - BZA [n](https://bza-29-danielb-gcp.blazemeter.net), Billing [n](https://billing-29-danielb-gcp.blazemeter.net), Auth... etc
 
+## Python virtual environments
+
+- Create venv
+```
+$ python3 -m venv ./venv
+```
+- Use venv
+```
+$ source ./venv/bin/activate
+ ...
+$ deactivate # optional
+```
+- Install requirements
+```
+$ python -m pip install -r requirements.txt # once
+ ... or ...
+$ pip install ...
+```
+
 : billing new-billing bzdev
 : how to aceess bzdev mongo
