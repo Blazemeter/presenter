@@ -1,4 +1,25 @@
 ## History
 
-- Development started March 2017, originally named as **javelin**, then **on-prem**
-- Image named **bzm-app**
+- March 2017 **javelin**, later **on-prem** today **PrivateCloud**
+- Docker image named **bzm-app**
+- Summer 2019 made Python 3 & use handlers (NG)
+- Multiple [backends](https://github.com/Blazemeter/private-cloud/blob/master/bzm_app/config.py#L56)
+- [Abstract](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/__init__.py) handlers
+- [Handlers](https://github.com/Blazemeter/private-cloud/tree/master/private_cloud/handler) intercepts HTTP request by method and path:
+- Encode/decode request, response, both? [codec](https://github.com/Blazemeter/private-cloud/tree/master/bzm_app/codec)
+- Encapsulate different [implementation](https://github.com/Blazemeter/private-cloud/blob/master/app/bzm_gateway_interceptor/hooks/tests.py#L96) of API
+
+: crane components encode/decode
+: bza /prepare
+: scheduler
+
+## Default handlers
+
+- Catch all handlers
+    - [bzm](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/catch_all.py)
+    - [mock](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/mock/catch_all.py)
+
+- Debugging headers injected by handlers
+    - `X-Upstream-Url`
+    - `X-Downstream-Prefix`
+    - `X-Original-Location` (redirects)

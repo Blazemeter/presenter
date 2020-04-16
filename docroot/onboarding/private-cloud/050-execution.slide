@@ -1,7 +1,25 @@
-## Excution
+## Quick install & execution
 
-Execution:
+- Quick install
 
+```
+sh <(curl -s https://s3.amazonaws.com/blazemeter-images/bzm-app/install/docker/install.run) \
+&& docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+```
+
+- Installation ([installer](https://github.com/Blazemeter/private-cloud/blob/master/install/docker/install.sh), [wiki](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/736919787/Private+Cloud+Docker+installer+WAP-14064))
+    - Starter `/usr/local/blazemeter/PrivateCloud/bzm-data-router`
+    - SSL certs `/etc/blazemeter/PrivateCloud/certs/*`
+    - Config `/etc/blazemeter/PrivateCloud/.env`
+
+- Configuration
+```
+vim /etc/blazemeter/PrivateCloud/.env
+docker rm -f bzm-data-router \
+&& docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
+```
+
+- Execution
 ```
 docker logs -f $(/usr/local/blazemeter/PrivateCloud/bzm-data-router)
 ```

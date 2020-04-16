@@ -1,9 +1,14 @@
-## Private Cloud
-
-[Private Cloud](https://github.com/Blazemeter/private-cloud)
+## Why Private Cloud
 
 - What does BlazeMeter?
 - What is OPL?
-    - Cloud access to files, names, values
-- Secrets handling
+    - Cloud can access files, names & values
+    - OPL can reach BZA
+    - Behind firewall load engines can reach SUT
+- Secrets?
+    - Files may contain sensitive info
+    - Names & values too (ie. report labels)
     - Only needed textual data reaches the cloud
+- [Repository](https://github.com/Blazemeter/private-cloud)
+
+: summary notes

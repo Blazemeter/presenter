@@ -1,7 +1,0 @@
-## Concept
-
-- BZA has RESTful API
-- An on-premise [Flask](https://flask.palletsprojects.com/) "reverse proxy" to extract/inject from REST API request/responses sensitive information
-- BZA uses S3 for storage, Private Cloud can use S3-compatible
-- Secrets kept in **keys** files at S3
- 

@@ -8,7 +8,7 @@ echo "Patching [$ROOT] ..." >&2 \
 && echo ... change title >&2 \
 && sed -i'' 's/Talks - The Go Programming Language/Talks/g' $ROOT/templates/dir.tmpl \
 && echo ... change subtitle >&2 \
-&& sed -i'' 's/Go talks/<a href=\/>Talks<\/a>/g' $ROOT/templates/dir.tmpl \
+&& sed -i'' 's/Go talks/<a href=..\/>Talks<\/a>/g' $ROOT/templates/dir.tmpl \
 && echo ... change slogan >&2 \
 && sed -i'' 's/The Go Programming Language/Talks/g' $ROOT/templates/dir.tmpl \
 && echo remove footer >&2 \
@@ -56,6 +56,14 @@ a.navup {
 
 #toc {
     background-color: #888888;
+}
+
+div.author > p {
+    color: #000;
+}
+
+div.author > p:first-child {
+    font-weight: bold;
 }
 EOS
 done
