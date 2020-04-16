@@ -1,6 +1,9 @@
 ## Deployment
 
 - [Entry point](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py)
+    - [private-cloud](https://github.com/Blazemeter/private-cloud/blob/master/setup.py#L18)
+    - [backwards](https://github.com/Blazemeter/private-cloud/blob/master/Dockerfile#L57) [compatible](https://github.com/Blazemeter/private-cloud/blob/master/app/entrypoint.sh)
+    - [patches](https://github.com/Blazemeter/private-cloud/tree/master/patches)
 - Not a crane component (crane's installation requires working `bzm-app`): no auto update
 - Jenkins [builder](http://new-jenkins.blazemeter.com:8080/job/CRANE-BZM-APP-CI/) job
 - Build from [master](http://new-jenkins.blazemeter.com:8080/job/CRANE-BZM-APP-CI/job/master/) after merging
