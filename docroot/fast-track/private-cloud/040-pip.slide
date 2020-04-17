@@ -1,0 +1,28 @@
+## pip
+
+- Ensure using correct venv:
+
+    ```
+    $ which python | grep $(basename $(pwd)) # should output path to venv's python
+    ```
+- Install requirements in venv:
+
+    ```
+    $ pip install -r requirements/builder.txt && pip install -r requirements/dev.txt
+    ```
+
+- Install application in dev mode:
+
+    ```
+    $ pip install -e .
+    ```
+- Private Cloud should start (inside venv) ...
+
+    ```
+    $ private-cloud
+    * APPLICATION_URL: [https://a.blazemeter.com]
+    * DATA_SERVICE_URL: [https://data.blazemeter.com]
+    ...
+    CTRL-C
+    ```
+

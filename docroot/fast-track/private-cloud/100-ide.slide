@@ -1,0 +1,10 @@
+## IDE
+
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+    - Install [Python Plugin](https://www.jetbrains.com/help/idea/plugin-overview.html)
+    - Configure [Python Debugger](https://www.jetbrains.com/help/idea/debugger-python.html) **with** `Gevent compatible` selected
+
+- `Command` + `;`
+    - `Project SDK`, `New ...`
+    - `Python SDK`, `Existing environment`, Location: `~/repos/private-cloud/venv/bin/python`
+    - `OK`, `Apply`, `OK`

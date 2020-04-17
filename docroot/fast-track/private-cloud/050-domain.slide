@@ -1,0 +1,8 @@
+## Private Cloud "domain"
+
+- Create "fake" domain **pc.local**
+
+    ```
+    $ echo $(ifconfig en0  | awk '/inet / {print $2}') pc.local | sudo tee -a /etc/hosts
+    ```
+

@@ -1,0 +1,17 @@
+## Minio
+
+- Minio listen at:
+
+    ```
+    http://pc.local:9000
+    ```
+- Brew or use [installer](https://github.com/Blazemeter/private-cloud/blob/master/install/docker/install.sh):
+
+    ```
+    brew install minio
+    ```
+- Create `bucket`:
+
+    ```
+    blazemeter
+    ```

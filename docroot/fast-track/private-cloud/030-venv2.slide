@@ -1,0 +1,24 @@
+## Venv
+
+- Usage
+    - List virtual envs:
+
+    ```
+    $ venv_finder
+    ```
+    - Activate first:
+
+    ```
+    $ venv
+    ```
+    - Activate nth:
+
+    ```
+    $ venv $N
+    ```
+    - Deactivate:
+
+    ```
+    $ deactivate
+    ```
+
