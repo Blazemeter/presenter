@@ -1,0 +1,178 @@
+# Priivate Cloud
+
+## Homebrew
+
+[Homebrew](https://brew.sh): `$ brew install git`
+
+## Code checkout
+
+`$ mkdir -p ~/repos && cd ~/repos`
+
+`$ git clone git@github.com:Blazemeter/private-cloud.git`
+
+## Python virtual environment
+
+- Create environment: `$ python3 -m venv ./<venv name>`
+- Activate it (better than [How to enter a Python virtual environment](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199061/How+to+enter+a+Python+virtual+environment))
+
+    ```
+    $ INIT_FILE=$(find ~ -maxdepth 1 -type f \( -name .profile -o -name .zshrc -o -name .bash_profile \) | sort | grep "$ZSH_NAME" | head -1) && echo $INIT_FILE
+
+    $ cat <<EOS >> $INIT_FILE
+    alias venv_finder="find . -depth 3 -type f -path '*/bin/activate' -exec echo \$(pwd -P)/{} \; | sed 's#/\./#/#g' | cat -n"
+    venv() {
+        local N="\${1:-1}"; local V="\$(venv_finder | head -n \$N | tail -n +\$N | awk '{print \$2}')"
+        [ -z "\$V" ] && { echo "\$(tput rev)VENV (\$N) not found, available:\$(tput sgr0)" && venv_finder && return 1; }
+        source "\$V" && echo "\$(tput bold)VENV\$(tput sgr0):\$(tput smul)\$V\$(tput sgr0)"
+    }
+    EOS
+    ```
+
+    - Reload **`$INIT_FILE`**: `$ source $INIT_FILE`
+- Usage
+    - List virtual envs: `$ venv_finder`
+    - Activate first: `$ venv`
+    - Activate nth: `$ venv $N`
+    - Deactivate: `$ deactivate`
+
+- Python requirements
+
+    - Ensure using correct venv: `$ which python | grep $(basename $(pwd)) # should output path to venv's python`
+    - Install requirements in venv: `$ pip install -r requirements/builder.txt && pip install -r requirements/dev.txt`
+    - Install application in dev mode: `$ pip install -e .`
+
+- Check it runs (inside venv) ...
+
+    ```
+    $ private-cloud
+    * APPLICATION_URL: [https://a.blazemeter.com]
+    * DATA_SERVICE_URL: [https://data.blazemeter.com]
+    ...
+    CTRL-C
+    ```
+
+## IDE
+
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+    - Install [Python Plugin](https://www.jetbrains.com/help/idea/plugin-overview.html)
+    - Configure [Python Debugger](https://www.jetbrains.com/help/idea/debugger-python.html) **with** `Gevent compatible` selected
+
+- `Command + ;`
+    - `Project SDK`, `New ...`
+        - `Python SDK`, `Existing environment`, Location: `~/repos/private-cloud/venv/bin/python`
+        - `OK`, `Apply`, `OK`
+
+- More
+    [How to open new python project from scratch in intellij](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/736100422/How+to+open+new+python+project+from+scratch+in+intellij)
+
+    [How to update Python package of a project](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199391/How+to+update+Python+package+of+a+project)
+
+    [How to set up an environment for API testing](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/742228038/How+to+set+up+an+environment+for+API+testing)
+
+    [BzDev GKE (GCP)](https://blazemeter.atlassian.net/wiki/spaces/DC/pages/656605217/BzDev+GKE+GCP)
+
+    [How to Setup Private Cloud with Asset Catalog locally](https://blazemeter.atlassian.net/wiki/spaces/BZCT/pages/952926283/How+to+Setup+Private+Cloud+with+Asset+Catalog+locally)
+
+## BZA & S3-compatible services
+
+- Create "fake" domain `pc.local`
+
+    $ echo $(ifconfig en0  | awk '/inet / {print $2}') pc.local | sudo tee -a /etc/hosts
+
+### BZA [bzdev](https://github.com/Blazemeter/bzdev#install)
+
+- `token`, `kubectl`?
+- Create new USER at `https://bza-{bzdev env}.blazemeter.net`
+- Create PrivateCloud Plan at `https://billing-{bzdev env}.blazemeter.net`
+    - Add USER to PrivateCLoud Plan
+- At `https://bza-{bzdev env}.blazemeter.net/app/#/settings/accounts/{PrivateCloud account ID}/environment` set **Application Url**: `http://pc.local:5000`
+
+### Minio
+
+Minio should listen at `http://pc.local:9000`
+- Install: `brew install minio` or use [installer](https://github.com/Blazemeter/private-cloud/blob/master/install/docker/install.sh)
+- Create `bucket` **blazemeter**
+
+### Private Cloud configuration
+
+Will listen at `http://pc.local:5000`
+
+- Create `.env` file:
+
+```
+cat <<EOS > .env
+ACCOUNT_ID={PrivateCloud account ID}
+GATEWAY_PORT=5000
+APPLICATION_URL=https://bza-{bzdev env}.blazemeter.net
+DATA_SERVICE_URL=https://bza-{bzdev env}.blazemeter.net
+AUTH_SERVICE_URL=https://keycloak-{bzdev env}.blazemeter.net
+ENDPOINT_URL=http://pc.local:9000
+BUCKET=blazemeter
+ACCESS_KEY_ID={Minio username}
+SECRET_ACCESS_KEY={Minio password}
+SIGNATURE=s3v4
+EOS
+```
+
+> Note: Minio credentials can be found in installers' Minio at  `/opt/storage/bzm-storage/.minio.sys/config/config.json`
+
+- Check it runs (inside venv) ...
+
+    ```
+    $ env $(cat .env) private-cloud
+    * APPLICATION_URL: [https://bza-{bzdev env}.blazemeter.net]
+    * DATA_SERVICE_URL: [https://bza-{bzdev env}.blazemeter.net]
+    ... ~20s for sanity checks to finish ...
+    ```
+
+    - Open in browser at `http://pc.local`
+        - **Welcome to private cloud!**
+    - CTRL-C
+
+README's [configuration](https://github.com/Blazemeter/private-cloud#configuration)
+
+[Data Router Configuration Variables](https://blazemeter.atlassian.net/wiki/spaces/BIKB/pages/847904965/Data+Router+Configuration+Variables)
+
+- Configure IDE
+    - Run/Debug Add Configuration
+        - In project's file tree right-click on directory `tests` > `Mark Directory as: Test Sources Root`
+        - Template: Python tests > pytest > EnvFile | [+] .env, choose config.env
+        - [Apply], [OK]
+    - Run/debug top bar: `Add configuration`
+        - Templates > Python > EnvFile
+            - Enable EnvFile
+            - [+] choose `.env` (if not allowed chose other file then "edit" path)
+            - [Apply] [OK]
+        - [+] Script path >> Module name `private_cloud`
+            - [Apply] [OK]
+        - Run or add breakpointsand Debug
+            - Breakpoint at [favicon](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/static.py#L32)
+                - `curl -i http://pc.local:5000/favicon.ico`
+
+## Private Cloud OPL (at least one required for Torero)
+
+### Docker for Mac
+
+- Screen into [VM](https://gist.github.com/BretFisher/5e1a0c7bcca4c735e716abf62afad389#option-1-use-screen-not-as-easy-as-nsenter)
+
+    $ screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+
+### Ship(s) for Torero and load engines
+
+- As Private Cloud user
+    - Ceate harbor (give it 10+ slots, shared)
+    - Create ship
+    - Run docker command
+    - Take coffee
+- Wait until UI shows `idle` ship at http://pc.local:5000/app/#/settings/accounts/NNNN/workspaces/NNNN/private-locations/
+
+## More
+
+- Mappings
+- Clients
+- make lint, make test, make lest
+- installer
+- Jenkins
+    - Builders
+        - BZA's harborVersionSettings
+    - Testers
