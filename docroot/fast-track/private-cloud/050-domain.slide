@@ -1,8 +1,14 @@
-## Private Cloud "domain"
+## Domain
 
+(for Private Cloud)
+
+- To reach `bzm-app` (and local Minio)
+- Reachable from:
+    - `bzm-app`
+    - `crane`
+    - load engines 
 - Create "fake" domain **pc.local**
 
     ```
     $ echo $(ifconfig en0  | awk '/inet / {print $2}') pc.local | sudo tee -a /etc/hosts
     ```
-

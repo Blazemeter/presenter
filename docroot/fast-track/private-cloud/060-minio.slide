@@ -10,7 +10,7 @@
     ```
     brew install minio
     ```
-- Create `bucket`:
+- Create `bucket` (using installer does it automatically):
 
     ```
     blazemeter

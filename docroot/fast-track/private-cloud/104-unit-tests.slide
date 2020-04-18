@@ -1,0 +1,13 @@
+## Tests
+
+- In project's file tree right-click directory
+    - `Mark Directory as: Sources Root`
+        - `app`
+        - `bzm_app`
+        - `private_cloud`
+    - `Mark Directory as: Test Sources Root`
+        - `tests`
+    - `Mark Directory as: Excluded`
+        - `requirements`
+        - `scripts`
+        - `venv`

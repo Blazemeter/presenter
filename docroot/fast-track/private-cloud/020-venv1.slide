@@ -5,7 +5,7 @@
     ```
     $ python3 -m venv ./<venv name>
     ```
-    And activate it (better than [How to enter a Python virtual environment](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199061/How+to+enter+a+Python+virtual+environment))
+    And activate it (IMO easier than [How to enter a Python virtual environment](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199061/How+to+enter+a+Python+virtual+environment))
 
     ```
     $ INIT_FILE=$(find ~ -maxdepth 1 -type f \( -name .profile -o -name .zshrc -o -name .bash_profile \) \

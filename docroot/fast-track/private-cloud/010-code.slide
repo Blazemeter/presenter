@@ -13,4 +13,3 @@ $ mkdir -p ~/repos && cd ~/repos \
 && git clone git@github.com:Blazemeter/private-cloud.git \
 && cd private-cloud
 ```
-
