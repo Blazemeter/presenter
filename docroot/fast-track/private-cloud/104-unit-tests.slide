@@ -1,6 +1,7 @@
 ## Tests
 
-- In project's file tree right-click directory
+- Use `EnvFile` **`ut.env`**
+- In project's file tree right-click directories
     - `Mark Directory as: Sources Root`
         - `app`
         - `bzm_app`
@@ -8,6 +9,4 @@
     - `Mark Directory as: Test Sources Root`
         - `tests`
     - `Mark Directory as: Excluded`
-        - `requirements`
-        - `scripts`
         - `venv`
