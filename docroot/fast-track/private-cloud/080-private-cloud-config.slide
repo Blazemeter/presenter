@@ -1,7 +1,7 @@
 ## Private Cloud Configuration
 
-We'll listen at `http://pc.local:5000`
-
+- Listen at `http://pc.local:5000`
+- Use Minio at `http://pc.local:9000`
 - Create `.env`:
 
     ```

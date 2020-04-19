@@ -1,6 +1,6 @@
 ## Captures
 
-[Captures](https://github.com/Blazemeter/private-cloud#capture-traffic-fixtures-development)
+See [README](https://github.com/Blazemeter/private-cloud#capture-traffic-fixtures-development)
 
 - Allows to record actions and if behavior acceptable, record interaction as UT for regression-avoiding UT: given same input expect same output.
 - Not perfect, cannot predict changes in backend

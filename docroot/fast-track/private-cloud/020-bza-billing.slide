@@ -1,0 +1,22 @@
+## BZA & Billing
+
+- Working [bzdev](https://github.com/Blazemeter/bzdev#install) installation
+- BZA
+    - Create new user using `REGISTER` tab at:
+
+        ```
+        https://bza-{bzdev env}.blazemeter.net/app/sign-in
+        ```
+- Billing
+    - Create PrivateCloud Plan at:
+
+        ```
+        https://billing-{bzdev env}.blazemeter.net
+        ```
+    - Add Private Cloud Plan to **created user**
+- BZA
+    - Set **Application Url** (installer does it automatically) to `http://pc.local:5000` at
+
+        ```
+        https://bza-{bzdev env}.blazemeter.net/app/#/settings/accounts/{PrivateCloud account ID}/environment
+        ```
