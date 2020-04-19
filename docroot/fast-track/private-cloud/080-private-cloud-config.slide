@@ -1,20 +1,26 @@
 ## Private Cloud Configuration
 
-Will listen at `http://pc.local:5000`
+We'll listen at `http://pc.local:5000`
 
-- Create `.env` file:
+- Create `.env`:
 
-```
-cat <<EOS > .env
-ACCOUNT_ID={PrivateCloud account ID}
-GATEWAY_PORT=5000
-APPLICATION_URL=https://bza-{bzdev env}.blazemeter.net
-DATA_SERVICE_URL=https://bza-{bzdev env}.blazemeter.net
-AUTH_SERVICE_URL=https://keycloak-{bzdev env}.blazemeter.net
-ENDPOINT_URL=http://pc.local:9000
-BUCKET=blazemeter
-ACCESS_KEY_ID={Minio username}
-SECRET_ACCESS_KEY={Minio password}
-SIGNATURE=s3v4
-EOS
-```
+    ```
+    cat <<EOS > .env
+    ACCOUNT_ID={PrivateCloud account ID}
+    GATEWAY_PORT=5000
+    APPLICATION_URL=https://bza-{bzdev env}.blazemeter.net
+    DATA_SERVICE_URL=https://bza-{bzdev env}.blazemeter.net
+    AUTH_SERVICE_URL=https://keycloak-{bzdev env}.blazemeter.net
+
+    ENDPOINT_URL=http://pc.local:9000
+    BUCKET=blazemeter
+    ACCESS_KEY_ID={Minio username}
+    SECRET_ACCESS_KEY={Minio password}
+    SIGNATURE=s3v4
+    EOS
+    ```
+    - Installer's Minio credentials can be found at:
+
+    ```
+    /opt/storage/bzm-storage/.minio.sys/config/config.json
+    ```

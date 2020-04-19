@@ -1,0 +1,3 @@
+## Make
+
+- `make lint` + `make test` = `make lest`

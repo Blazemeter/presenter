@@ -1,6 +1,6 @@
-## pip
+## pip and requirements
 
-- Ensure using correct venv:
+- Ensure using correct **venv**:
 
     ```
     $ which python | grep $(basename $(pwd)) # should output path to venv's python

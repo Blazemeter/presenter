@@ -1,4 +1,4 @@
-## Tests
+## Unit Tests
 
 - Use `EnvFile` **`ut.env`**
 - In project's file tree right-click directories

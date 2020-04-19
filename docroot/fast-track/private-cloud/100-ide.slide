@@ -1,8 +1,8 @@
 ## IDE
 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-    - Install [Python Plugin](https://www.jetbrains.com/help/idea/plugin-overview.html)
-    - Configure [Python Debugger](https://www.jetbrains.com/help/idea/debugger-python.html) **with** `Gevent compatible` selected
+- Install [Python Plugin](https://www.jetbrains.com/help/idea/plugin-overview.html)
+- Configure [Python Debugger](https://www.jetbrains.com/help/idea/debugger-python.html) **with** `Gevent compatible` selected
 
-.image /img/python_debugger.png 300 _
+.image /python_debugger.png 300 _
 

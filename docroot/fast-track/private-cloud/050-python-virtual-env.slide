@@ -11,19 +11,19 @@
     $ INIT_FILE=$(find ~ -maxdepth 1 -type f \( -name .profile -o -name .zshrc -o -name .bash_profile \) \
     | sort | grep "$ZSH_NAME" | head -1) && echo $INIT_FILE \
     && cat <<EOS | tee -a $INIT_FILE
-    alias venv_finder="find . -depth 3 -type f -path '*/bin/activate' -exec echo \$(pwd -P)/{} \; | sed 's#/\./#/#g' | cat -n"
+    alias venv_finder="find . -depth 3 -type f -path '*/bin/activate' -exec echo \$(pwd -P)/{} \; \
+                       | sed 's#/\./#/#g' | cat -n"
     venv() {
         local N="\${1:-1}"; local V="\$(venv_finder | head -n \$N | tail -n +\$N | awk '{print \$2}')"
-        [ -z "\$V" ] && { \
-            echo "\$(tput rev)VENV (\$N) not found, available:\$(tput sgr0)" \
-            && venv_finder && return 1; }
+        [ -z "\$V" ] && { echo "\$(tput rev)VENV (\$N) not found, available:\$(tput sgr0)" \
+                          && venv_finder && return 1; }
         source "\$V" && echo "\$(tput bold)VENV\$(tput sgr0):\$(tput smul)\$V\$(tput sgr0)"
     }
     EOS
     ```
 
-    - Reload **`$INIT_FILE`**:
+    - Load `$INIT_FILE` and **activate** venv
 
     ```
-    $ source $INIT_FILE
+    $ source $INIT_FILE && venv
     ```

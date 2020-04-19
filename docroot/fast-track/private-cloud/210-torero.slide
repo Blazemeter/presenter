@@ -1,0 +1,7 @@
+## Torero
+
+- BZA needs access to metadata (localtions, threads, etc)
+    - Not available on Private Cloud installation
+- Torero is CraneComponent that runs on premise
+    - Fetches assets from `bzm-app`
+    - Pushes results to BZA via `bzm-app`

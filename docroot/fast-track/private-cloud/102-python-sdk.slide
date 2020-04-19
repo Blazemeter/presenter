@@ -1,10 +1,10 @@
 ## Python SDK
 
 - `Command` + `;`
-    - `Project SDK`, `New ...`
-    - `Python SDK`, `Existing environment`, Location:
-    
-    ```
-    ~/repos/private-cloud/venv/bin/python
-    ```
-    - `OK`, `Apply`, `OK`
+- `Project SDK`, `New ...`
+- `Python SDK`, `Existing environment`, Location:
+
+```
+~/repos/private-cloud/venv/bin/python
+```
+- `OK`, `Apply`, `OK`

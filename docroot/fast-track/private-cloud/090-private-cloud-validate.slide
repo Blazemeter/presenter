@@ -1,10 +1,4 @@
-## Validate
-
-- Installer's Minio credentials can be found at:
-
-  ```
-  /opt/storage/bzm-storage/.minio.sys/config/config.json
-  ```
+## Validate configuration
 
 - Check it runs (inside venv) ...
 
@@ -14,12 +8,11 @@
     * DATA_SERVICE_URL: [https://bza-{bzdev env}.blazemeter.net]
     ... ~15s for sanity checks to finish ...
     ```
-
-    - Open in browser:
-        ```
-        http://pc.local
-        ```
-    - **Welcome to private cloud!**
-    - `CTRL-C`
+- Open in browser:
+    ```
+    http://pc.local
+    ```
+- **Welcome to private cloud!**
+- `CTRL-C`
 
 See [README](https://github.com/Blazemeter/private-cloud#configuration) and [Data Router Configuration Variables](https://blazemeter.atlassian.net/wiki/spaces/BIKB/pages/847904965/Data+Router+Configuration+Variables)
