@@ -1,12 +1,13 @@
 ## Unit Tests
 
-- Use `EnvFile` **`ut.env`**
-- In project's file tree right-click directories
-    - `Mark Directory as: Sources Root`
+- `EnvFile` **`ut.env`**
+    - **Run/Debug**: `.env`; **UTs**: `ut.env`
+- `Mark Directory as` (file tree right-click directories)
+    - **Sources Root**
         - `app`
         - `bzm_app`
         - `private_cloud`
-    - `Mark Directory as: Test Sources Root`
+    - **Test Sources Root**
         - `tests`
-    - `Mark Directory as: Excluded`
+    - **Excluded**
         - `venv`

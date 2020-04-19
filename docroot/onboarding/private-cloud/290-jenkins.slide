@@ -1,0 +1,12 @@
+## Jenkins
+
+- Testers
+    - [API-TEST-BZA](http://new-jenkins.blazemeter.com:8080/job/API-TEST-BZA/)
+    - [API-TEST-TAURUS](http://new-jenkins.blazemeter.com:8080/job/API-TEST-TAURUS/)
+    - [API-TEST-SELECTED](http://new-jenkins.blazemeter.com:8080/job/API-TEST-SELECTED/)
+- Builders
+    - [CRANE-BZM-APP-CI](http://new-jenkins.blazemeter.com:8080/job/CRANE-BZM-APP-CI/)
+    - [CRANE-BZM-CRANE](http://new-jenkins.blazemeter.com:8080/job/CRANE-BZM-CRANE/)
+    - [CRANE-TORERO-CI](http://new-jenkins.blazemeter.com:8080/job/CRANE-TORERO-CI/)
+    - ...
+- BZA's harborVersionSettings

@@ -1,17 +1,19 @@
 ## Private Cloud OPLs
 
 - At least one required for [Torero](https://github.com/Blazemeter/torero)
-- Docker for Mac
-    - Screen into [VM](https://gist.github.com/BretFisher/5e1a0c7bcca4c735e716abf62afad389#option-1-use-screen-not-as-easy-as-nsenter) `$ screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty`
-- As Private Cloud user create harbor (give it over 5 slots and of type "shared"), create ship. `A_ENVIRONMENT` **must** be `http://pc.local:5000`
-    - Run docker command
+- Docker for Mac: screen into [VM](https://gist.github.com/BretFisher/5e1a0c7bcca4c735e716abf62afad389#option-1-use-screen-not-as-easy-as-nsenter)
+    
+    ```
+    $ screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+    ```
+- As **PrivateCloud** user create `shared` harbor with 10 slots and ship
+    - `A_ENVIRONMENT` **must** be `http://pc.local:5000`
 
-    ```
-    docker logs -f $(docker run ...)
-    ```
-    - Take coffee
-- Wait until ship has status `idle` at
+        ```
+        $ docker logs -f $(docker run ...)
+        ```
+    - Take coffee, wait **until** ship has status `idle` at
 
-    ```
-    http://pc.local:5000/app/#/settings/accounts/QQQQ/workspaces/PPPP/private-locations/
-    ```
+        ```
+        http://pc.local:5000/app/#/settings/accounts/{accountID}/workspaces/{workspaceID}/private-locations/
+        ```

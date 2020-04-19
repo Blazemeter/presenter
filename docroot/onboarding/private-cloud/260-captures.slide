@@ -6,15 +6,34 @@ See [README](https://github.com/Blazemeter/private-cloud#capture-traffic-fixture
 - Not perfect, cannot predict changes in backend
 - Commit only relevant captures
 
+## Capture k8s, docker
+
+- Kubernetes
+
     ```
     REQUEST_DUMP_CAPTURE_DIR=/tmp
     $ kubectl cp \
         ns-*/dpl-generic-private-cloud-*:${REQUEST_DUMP_CAPTURE_DIR}/ \
         ./tests/fixtures/captured/
     ...
+    ```
+
+- Docker
+
+    ```
+    echo REQUEST_DUMP_CAPTURE_DIR=$(pwd)/tests/fixtures/captured >> .env
+    private-cloud
+    ...
+    ```
+
+- Test, commmit and push
+
+    ```
     $ git add ./tests/fixtures/captured/<METHOD>/<PATH>/*.json
-    $ git commit -m ...
-    $ make lest && git push
+    ...
+    $ make lest
+    ...
+    $ git commit -m ... && make lest && git push
     ```
 
 : new-pc

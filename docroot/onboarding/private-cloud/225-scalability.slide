@@ -1,5 +1,9 @@
 ## Scalability
 
 - Concurrency management or why I do not scale
-    - Local file [locking](https://github.com/Blazemeter/private-cloud/blob/master/bzm_app/mapping.py#L96) avoids losing secrets on single node
-    - When multi node issue unsolved, spread keys "namespaces" helps
+    - Local file [locking](https://github.com/Blazemeter/private-cloud/blob/master/bzm_app/mapping.py#L96) to not lose secrets on single node
+        - Reads mapping `M={S1}` adds secret S2: `M={S1,S2}`
+        - Other node does same `M`={S1}` => `M'={S1,S2'}`
+        - Whichever node writes, `S2` or `S2'` is **lost**!
+    - Fine-grained "namespaces" reduces chances of this, less APIs need to write to same mapping
+

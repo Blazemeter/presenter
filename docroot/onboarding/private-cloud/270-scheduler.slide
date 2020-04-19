@@ -1,0 +1,7 @@
+## Scheduler
+
+[README](https://github.com/Blazemeter/private-cloud#scheduler)
+
+- Uses BZA's scheduler plus `bzm-app` scheduler
+    - Guarantee that behind firewall schedules match cloud's schedule
+- Requires API key to be configured

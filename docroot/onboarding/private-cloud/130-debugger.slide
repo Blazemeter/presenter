@@ -1,11 +1,15 @@
 ## Debugger
 
 - `Run/Debug Add Configuration`
-    - Template: Python tests > pytest > EnvFile | `[+]` .env, choose `.env`, `[Apply]`, `[OK]`
-- `Add configuration `Templates` > `Python` > `EnvFile` > `Enable EnvFile`
-- `[+]` choose `.env` (if not allowed chose other file then "edit" path) `[Apply]`, `[OK]`
-- `[+]` `Script path` >> `Module name`: `private_cloud`. `[Apply]`, `[OK]`
-- **Run** or **Debug** with **breakpoint** at [favicon](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/static.py#L32) handler
-- `curl -i http://pc.local:5000/favicon.ico`
+    - `Add configuration` `Templates` > (`Python`|`Python tests` > `pytest`)
+    - `EnvFile` > `Enable EnvFile`
+- Run/Debug: `[+]` choose `.env` (if not allowed chose other file then "edit" path) `[Apply]`, `[OK]`
 
 .image /rundebug_bar.png 140 _
+
+## Debugger validation
+
+- Tests: `[+]` choose `ut.env` `[Apply]`, `[OK]`
+    - `[+]` `Script path` >> `Module name`: `private_cloud`. `[Apply]`, `[OK]`
+- **Run** or **Debug** with **breakpoint** at [favicon](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/handler/bzm/static.py#L32) handler
+    - `curl -i http://pc.local:5000/favicon.ico`

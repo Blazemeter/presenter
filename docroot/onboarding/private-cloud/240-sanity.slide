@@ -1,5 +1,8 @@
 ## Sanity
 
-[Sanity](https://github.com/Blazemeter/private-cloud/tree/master/bzm_app/sanity)
+Sanity [checks](https://github.com/Blazemeter/private-cloud/tree/master/bzm_app/sanity)
 
-- [Boot](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py#L21), [API](https://github.com/Blazemeter/private-cloud/blob/990ec0b8def43b4bea67721c05e46d1323207e44/private_cloud/handler/bzm/health.py#L10), [Quick](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py#L16) S3 connectivity test with `BZM_CHECK_S3`
+- Write to S3 type and results
+    - [Boot](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py#L21)
+    - [API](https://github.com/Blazemeter/private-cloud/blob/990ec0b8def43b4bea67721c05e46d1323207e44/private_cloud/handler/bzm/health.py#L10)
+- [Quick](https://github.com/Blazemeter/private-cloud/blob/master/private_cloud/__main__.py#L16) S3 connectivity test with `BZM_CHECK_S3`
