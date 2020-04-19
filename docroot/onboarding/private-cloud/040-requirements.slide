@@ -1,8 +1,0 @@
-## Requirements
-
-- [ ] [Homebrew](https://brew.sh)
-- [ ] [IntelliJ IDEA](https://www.jetbrains.com/idea)
-- [ ] kubectl, vault
-- [ ] [bzdev](https://github.com/Blazemeter/bzdev#install)
-- [ ] BZA dev requires [php7+mongo3.6](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/mac_install_php7.bash)
-- [ ] Local checkout of [https://github.com/Blazemeter/private-cloud](https://github.com/Blazemeter/private-cloud)
