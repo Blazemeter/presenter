@@ -1,7 +1,7 @@
 ## BZA & Billing
 
 - Working [bzdev](https://github.com/Blazemeter/bzdev#install) installation
-- Round 1
+- Round 1 ([How to give yourself admin on billing](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/571801667/How+to+give+yourself+admin+on+billing))
     - @Billing create PrivateCloud Plan at (`PrivateCloud=true`):
 
         ```
