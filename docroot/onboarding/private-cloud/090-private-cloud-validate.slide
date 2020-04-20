@@ -8,9 +8,9 @@
     * DATA_SERVICE_URL: [https://bza-{bzdev env}.blazemeter.net]
     ... ~15s for sanity checks to finish ...
     ```
-- Open in browser:
+- Open browser at:
     ```
-    http://pc.local
+    http://pc.local:5000
     ```
 - **Welcome to private cloud!**
 - `CTRL-C`

@@ -1,5 +1,5 @@
 ## Make
 
-- `make lint`
-- `make test`
+- `make lint` ([flake8](https://pypi.org/project/flake8))
+- `make test` ([pytest](https://pypi.org/project/pytest))
 - `make lest` = lint + test

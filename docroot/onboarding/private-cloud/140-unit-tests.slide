@@ -1,7 +1,6 @@
 ## Unit Tests
 
-- `EnvFile` **`ut.env`**
-    - **Run/Debug**: `.env`; **UTs**: `ut.env`
+- `EnvFile` **`ut.env`**, `Tests`: `[+]` choose **`ut.env`** `[Apply]`, `[OK]`
 - `Mark Directory as` (file tree right-click directories)
     - **Sources Root**
         - `app`

@@ -2,7 +2,8 @@
 
 See [README](https://github.com/Blazemeter/private-cloud#capture-traffic-fixtures-development)
 
-- Allows to record actions and if behavior acceptable, record interaction as UT for regression-avoiding UT: given same input expect same output.
+- If behavior **correct**, commit as UT (for anti-regressions: same input, same output)
+    - Fixtures per [method/path](https://github.com/Blazemeter/private-cloud/tree/master/tests/fixtures/captured)
 - Not perfect, cannot predict changes in backend
 - Commit only relevant captures
 
@@ -21,8 +22,8 @@ See [README](https://github.com/Blazemeter/private-cloud#capture-traffic-fixture
 - Docker
 
     ```
-    echo REQUEST_DUMP_CAPTURE_DIR=$(pwd)/tests/fixtures/captured >> .env
-    private-cloud
+    $ echo REQUEST_DUMP_CAPTURE_DIR=$(pwd)/tests/fixtures/captured >> .env
+    $ env $(cat .env) private-cloud
     ...
     ```
 

@@ -7,6 +7,7 @@
     ```
     And activate it (easier than [How to enter a Python virtual environment](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199061/How+to+enter+a+Python+virtual+environment))
 
+    ---
     ```
     $ INIT_FILE=$(find ~ -maxdepth 1 -type f \( -name .profile -o -name .zshrc -o -name .bash_profile \) \
     | sort | grep "$ZSH_NAME" | head -1) && echo $INIT_FILE \
@@ -22,8 +23,9 @@
     EOS
     ```
 
-    - Load `$INIT_FILE` and **activate** venv
+    ---
+    - Source `$INIT_FILE` and **activate** `venv`:
 
-    ```
-    $ source $INIT_FILE && venv
-    ```
+        ```
+        $ source $INIT_FILE && venv
+        ```

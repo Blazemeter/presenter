@@ -1,13 +1,11 @@
 ## Code
 
-- Git (ie. from [brew](https://brew.sh))
+- [Git](https://git-scm.com) (ie. from [brew](https://brew.sh))
 
     ```
     $ brew install git
     ```
-
-- Checkout
-
+    ---
     ```
     $ mkdir -p ~/repos && cd ~/repos \
     && git clone git@github.com:Blazemeter/private-cloud.git \

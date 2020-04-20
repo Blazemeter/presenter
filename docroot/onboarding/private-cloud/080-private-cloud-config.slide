@@ -1,8 +1,8 @@
 ## Private Cloud Configuration
 
-- Listen at `http://pc.local:5000`
-- Use Minio at `http://pc.local:9000`
-- Create `.env`:
+- `minio`: `http://pc.local:9000`
+- `bzm-app`: `http://pc.local:5000`
+- `.env`:
 
     ```
     cat <<EOS > .env
@@ -19,7 +19,7 @@
     SIGNATURE=s3v4
     EOS
     ```
-    - Installer's Minio credentials can be found at:
+- Installer's Minio credentials can be found at:
 
     ```
     /opt/storage/bzm-storage/.minio.sys/config/config.json

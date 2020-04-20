@@ -7,5 +7,5 @@
 - Not a crane component (crane's installation requires working `bzm-app`): no auto update
 - Jenkins [builder](http://new-jenkins.blazemeter.com:8080/job/CRANE-BZM-APP-CI/) job
 - Build from [master](http://new-jenkins.blazemeter.com:8080/job/CRANE-BZM-APP-CI/job/master/) after merging
-- Update BZA's [HarborVersionSettings](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Settings/HarborVersionsSettings.php#L270)
+- Update BZA's [HarborVersionSettings](https://github.com/Blazemeter/a.blazemeter.com/blob/develop/src/blazemeter/Settings/HarborVersionsSettings.php#L270): [prod](https://a.blazemeter.com/api/v4/admin/phpinfo#cranecomponents_settings), [new](https://new.blazemeter.com/api/v4/admin/phpinfo#cranecomponents_settings), etc
 - CSM informs updated URL for customers to update at their convenience
