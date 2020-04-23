@@ -1,0 +1,11 @@
+## Hooks & Handlers
+
+- Hooks
+    - Blueprints
+- Handlers
+    - Router
+    - Base classes
+        - RestHandler
+            - Methods `Get`, `Post` ...
+            - `BzmHandler`, `MockHandler`, `AuthHandler` ...
+    - Concrete: `bzm.*`, `mock.*`, `auth.*` ...

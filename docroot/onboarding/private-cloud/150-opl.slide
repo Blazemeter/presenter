@@ -17,3 +17,7 @@
         ```
         http://pc.local:5000/app/#/settings/accounts/{accountID}/workspaces/{workspaceID}/private-locations/
         ```
+- Run BlazeMeter Test
+    - `Performance` tab `>` `[Create Test]` `>` `[Performance Test]`
+        - URL/API: `http://blazedemo.com`
+        - JMX, YAML, ...
