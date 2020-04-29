@@ -1,31 +1,29 @@
 ## Python virtual environment
 
-- Create environment:
+- Create virtual environment
 
     ```
     $ python3 -m venv ./<venv name>
     ```
-    And activate it (easier than [How to enter a Python virtual environment](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199061/How+to+enter+a+Python+virtual+environment))
+- Install venv_finder/venv (easier than [this](https://blazemeter.atlassian.net/wiki/spaces/RD/pages/102199061/How+to+enter+a+Python+virtual+environment))
 
-    ---
     ```
-    $ INIT_FILE=$(find ~ -maxdepth 1 -type f \( -name .profile -o -name .zshrc -o -name .bash_profile \) \
-    | sort | grep "$ZSH_NAME" | head -1) && echo $INIT_FILE \
-    && cat <<EOS | tee -a $INIT_FILE
-    alias venv_finder="find . -depth 3 -type f -path '*/bin/activate' -exec echo \$(pwd -P)/{} \; \
-                       | sed 's#/\./#/#g' | cat -n"
+    $ INIT_FILES=$(find ~ -maxdepth 1 -type f \( -name .profile -o -name .zshrc -o -name .bash_profile -o -name .bashrc \)) \
+    && cat <<EOS | tee -a $INIT_FILES
+    # added venv-finder/venv at $(date -u)
+    alias venv_finder="find . -mindepth 3 -maxdepth 3 -type f -path '*/bin/activate' -exec echo \\\$(pwd -P)/{} \; | sed 's#/\./#/#g' | cat -n"
     venv() {
         local N="\${1:-1}"; local V="\$(venv_finder | head -n \$N | tail -n +\$N | awk '{print \$2}')"
-        [ -z "\$V" ] && { echo "\$(tput rev)VENV (\$N) not found, available:\$(tput sgr0)" \
-                          && venv_finder && return 1; }
+        [ -z "\$V" ] && { \
+            echo "\$(tput rev)VENV (\$N) not found, available:\$(tput sgr0)" && venv_finder && return 1; \
+        }
         source "\$V" && echo "\$(tput bold)VENV\$(tput sgr0):\$(tput smul)\$V\$(tput sgr0)"
     }
     EOS
     ```
-
-    ---
-    - Source `$INIT_FILE` and **activate** `venv`:
-
-        ```
-        $ source $INIT_FILE && venv
-        ```
+- Source activate venv_finder/venv (create new login terminal) then activate the venv
+    ```
+    $ eval $( find ~ -maxdepth 1 -type f \( \
+        -name .profile -o -name .zshrc -o -name .bash_profile -o -name .bashrc \) -exec echo source {} \
+    \;) && venv
+    ```
